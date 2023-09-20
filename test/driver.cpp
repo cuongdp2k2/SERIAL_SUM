@@ -1,4 +1,4 @@
-#define MAX_SIM 200
+#define MAX_SIM 2000
 
 void set_random(Vtop *dut, vluint64_t sim_unit) {
     dut->en_i = 1;
