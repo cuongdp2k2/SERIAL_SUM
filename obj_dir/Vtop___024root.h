@@ -24,11 +24,11 @@ class Vtop___024root final : public VerilatedModule {
     CData/*7:0*/ top__DOT__sum_module__DOT__data_in;
     CData/*7:0*/ top__DOT__sum_module__DOT__count_wire;
     CData/*0:0*/ __Vclklast__TOP__clk_i;
-    VL_OUT16(sum_o,8,0);
-    SData/*8:0*/ top__DOT__sum_module__DOT__sum_reg;
-    SData/*8:0*/ top__DOT__sum_module__DOT__out_reg;
-    SData/*8:0*/ top__DOT__sum_module__DOT__add_wire;
-    SData/*8:0*/ top__DOT__sum_module__DOT__out_wire;
+    VL_OUT16(sum_o,15,0);
+    SData/*15:0*/ top__DOT__sum_module__DOT__sum_reg;
+    SData/*15:0*/ top__DOT__sum_module__DOT__out_reg;
+    SData/*15:0*/ top__DOT__sum_module__DOT__out_wire;
+    SData/*15:0*/ top__DOT__sum_module__DOT__add_wire;
     VlUnpacked<CData/*0:0*/, 2> __Vm_traceActivity;
 
     // INTERNAL VARIABLES

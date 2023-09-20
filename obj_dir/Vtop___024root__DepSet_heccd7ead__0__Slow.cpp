@@ -26,12 +26,12 @@ VL_ATTR_COLD void Vtop___024root___settle__TOP__0(Vtop___024root* vlSelf) {
     if (vlSelf->en_i) {
         vlSelf->top__DOT__sum_module__DOT__data_in 
             = (0xffU & (IData)(vlSelf->data_i));
-        vlSelf->sum_o = (0x1ffU & (IData)(vlSelf->top__DOT__sum_module__DOT__out_wire));
+        vlSelf->sum_o = (0xffffU & (IData)(vlSelf->top__DOT__sum_module__DOT__out_wire));
     } else {
         vlSelf->top__DOT__sum_module__DOT__data_in = 0U;
         vlSelf->sum_o = 0U;
     }
-    vlSelf->top__DOT__sum_module__DOT__add_wire = (0x1ffU 
+    vlSelf->top__DOT__sum_module__DOT__add_wire = (0xffffU 
                                                    & ((IData)(vlSelf->top__DOT__sum_module__DOT__sum_reg) 
                                                       + 
                                                       ((IData)(vlSelf->rst_ni)
@@ -40,9 +40,12 @@ VL_ATTR_COLD void Vtop___024root___settle__TOP__0(Vtop___024root* vlSelf) {
                                                          == (IData)(vlSelf->top__DOT__sum_module__DOT__count_reg))
                                                          ? 0U
                                                          : 
-                                                        ((0x100U 
-                                                          & ((IData)(vlSelf->top__DOT__sum_module__DOT__data_in) 
-                                                             << 1U)) 
+                                                        ((0xff00U 
+                                                          & ((- (IData)(
+                                                                        (1U 
+                                                                         & ((IData)(vlSelf->top__DOT__sum_module__DOT__data_in) 
+                                                                            >> 7U)))) 
+                                                             << 8U)) 
                                                          | (IData)(vlSelf->top__DOT__sum_module__DOT__data_in)))
                                                         : 0U)));
 }
@@ -82,15 +85,15 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->data_i = VL_RAND_RESET_I(8);
     vlSelf->n_i = VL_RAND_RESET_I(8);
     vlSelf->done_o = VL_RAND_RESET_I(1);
-    vlSelf->sum_o = VL_RAND_RESET_I(9);
+    vlSelf->sum_o = VL_RAND_RESET_I(16);
     vlSelf->top__DOT__sum_module__DOT__count_reg = VL_RAND_RESET_I(8);
-    vlSelf->top__DOT__sum_module__DOT__sum_reg = VL_RAND_RESET_I(9);
-    vlSelf->top__DOT__sum_module__DOT__out_reg = VL_RAND_RESET_I(9);
+    vlSelf->top__DOT__sum_module__DOT__sum_reg = VL_RAND_RESET_I(16);
+    vlSelf->top__DOT__sum_module__DOT__out_reg = VL_RAND_RESET_I(16);
     vlSelf->top__DOT__sum_module__DOT__done_wire = VL_RAND_RESET_I(1);
     vlSelf->top__DOT__sum_module__DOT__data_in = VL_RAND_RESET_I(8);
+    vlSelf->top__DOT__sum_module__DOT__out_wire = VL_RAND_RESET_I(16);
     vlSelf->top__DOT__sum_module__DOT__count_wire = VL_RAND_RESET_I(8);
-    vlSelf->top__DOT__sum_module__DOT__add_wire = VL_RAND_RESET_I(9);
-    vlSelf->top__DOT__sum_module__DOT__out_wire = VL_RAND_RESET_I(9);
+    vlSelf->top__DOT__sum_module__DOT__add_wire = VL_RAND_RESET_I(16);
     for (int __Vi0=0; __Vi0<2; ++__Vi0) {
         vlSelf->__Vm_traceActivity[__Vi0] = VL_RAND_RESET_I(1);
     }

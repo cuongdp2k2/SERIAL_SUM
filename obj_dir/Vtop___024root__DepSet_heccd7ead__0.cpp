@@ -25,10 +25,10 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
     // Body
     if (vlSelf->rst_ni) {
         vlSelf->top__DOT__sum_module__DOT__out_reg 
-            = (0x1ffU & (IData)(vlSelf->top__DOT__sum_module__DOT__out_wire));
+            = (0xffffU & (IData)(vlSelf->top__DOT__sum_module__DOT__out_wire));
         vlSelf->top__DOT__sum_module__DOT__sum_reg 
             = ((0U == (IData)(vlSelf->top__DOT__sum_module__DOT__count_reg))
-                ? 0U : (0x1ffU & (IData)(vlSelf->top__DOT__sum_module__DOT__add_wire)));
+                ? 0U : (0xffffU & (IData)(vlSelf->top__DOT__sum_module__DOT__add_wire)));
         vlSelf->top__DOT__sum_module__DOT__count_reg 
             = (0xffU & ((IData)(vlSelf->top__DOT__sum_module__DOT__done_wire)
                          ? ((IData)(vlSelf->en_i) ? 
@@ -59,7 +59,7 @@ VL_INLINE_OPT void Vtop___024root___combo__TOP__1(Vtop___024root* vlSelf) {
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___combo__TOP__1\n"); );
     // Body
-    vlSelf->top__DOT__sum_module__DOT__add_wire = (0x1ffU 
+    vlSelf->top__DOT__sum_module__DOT__add_wire = (0xffffU 
                                                    & ((IData)(vlSelf->top__DOT__sum_module__DOT__sum_reg) 
                                                       + 
                                                       ((IData)(vlSelf->rst_ni)
@@ -68,12 +68,15 @@ VL_INLINE_OPT void Vtop___024root___combo__TOP__1(Vtop___024root* vlSelf) {
                                                          == (IData)(vlSelf->top__DOT__sum_module__DOT__count_reg))
                                                          ? 0U
                                                          : 
-                                                        ((0x100U 
-                                                          & ((IData)(vlSelf->top__DOT__sum_module__DOT__data_in) 
-                                                             << 1U)) 
+                                                        ((0xff00U 
+                                                          & ((- (IData)(
+                                                                        (1U 
+                                                                         & ((IData)(vlSelf->top__DOT__sum_module__DOT__data_in) 
+                                                                            >> 7U)))) 
+                                                             << 8U)) 
                                                          | (IData)(vlSelf->top__DOT__sum_module__DOT__data_in)))
                                                         : 0U)));
-    vlSelf->sum_o = ((IData)(vlSelf->en_i) ? (0x1ffU 
+    vlSelf->sum_o = ((IData)(vlSelf->en_i) ? (0xffffU 
                                               & (IData)(vlSelf->top__DOT__sum_module__DOT__out_wire))
                       : 0U);
 }

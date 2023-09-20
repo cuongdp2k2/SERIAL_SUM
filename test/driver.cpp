@@ -2,7 +2,7 @@
 
 void set_random(Vtop *dut, vluint64_t sim_unit) {
     dut->en_i = 1;
-    dut->n_i = (sim_unit == 0 || dut->done_o==1 ) ? rand()%4 + 1 : dut->n_i ;
+    dut->n_i = (sim_unit == 0 || dut->done_o==1 ) ? rand()%16 + 1 : dut->n_i ;
     dut->data_i = rand() % 128 ;
     dut-> rst_ni = 1;
 

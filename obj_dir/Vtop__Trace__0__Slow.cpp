@@ -17,7 +17,7 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+9,"data_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 7,0);
     tracep->declBus(c+10,"n_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 7,0);
     tracep->declBit(c+11,"done_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+12,"sum_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 8,0);
+    tracep->declBus(c+12,"sum_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 15,0);
     tracep->pushNamePrefix("top ");
     tracep->declBit(c+6,"clk_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+7,"rst_ni",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
@@ -25,7 +25,7 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+9,"data_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 7,0);
     tracep->declBus(c+10,"n_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 7,0);
     tracep->declBit(c+11,"done_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+12,"sum_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 8,0);
+    tracep->declBus(c+12,"sum_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 15,0);
     tracep->pushNamePrefix("sum_module ");
     tracep->declBit(c+6,"clk_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+8,"en_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
@@ -33,17 +33,17 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+10,"n_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 7,0);
     tracep->declBus(c+9,"data_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 7,0);
     tracep->declBit(c+11,"done_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+12,"sum_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 8,0);
+    tracep->declBus(c+12,"sum_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 15,0);
     tracep->declBus(c+1,"count_reg",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 7,0);
-    tracep->declBus(c+2,"sum_reg",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 8,0);
-    tracep->declBus(c+3,"out_reg",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 8,0);
+    tracep->declBus(c+2,"sum_reg",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 15,0);
+    tracep->declBus(c+3,"out_reg",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 15,0);
     tracep->declBit(c+4,"done_wire",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1);
     tracep->declBus(c+13,"n_in",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 7,0);
     tracep->declBus(c+14,"data_in",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 7,0);
+    tracep->declBus(c+5,"out_wire",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 15,0);
     tracep->declBus(c+1,"count_wire",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 7,0);
-    tracep->declBus(c+15,"data_wire",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 8,0);
-    tracep->declBus(c+16,"add_wire",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 8,0);
-    tracep->declBus(c+5,"out_wire",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 8,0);
+    tracep->declBus(c+15,"data_wire",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 15,0);
+    tracep->declBus(c+16,"add_wire",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 15,0);
     tracep->popNamePrefix(2);
 }
 
@@ -88,38 +88,44 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
     uint32_t* const oldp VL_ATTR_UNUSED = bufp->oldp(vlSymsp->__Vm_baseCode);
     // Body
     bufp->fullCData(oldp+1,(vlSelf->top__DOT__sum_module__DOT__count_reg),8);
-    bufp->fullSData(oldp+2,(vlSelf->top__DOT__sum_module__DOT__sum_reg),9);
-    bufp->fullSData(oldp+3,(vlSelf->top__DOT__sum_module__DOT__out_reg),9);
+    bufp->fullSData(oldp+2,(vlSelf->top__DOT__sum_module__DOT__sum_reg),16);
+    bufp->fullSData(oldp+3,(vlSelf->top__DOT__sum_module__DOT__out_reg),16);
     bufp->fullBit(oldp+4,((0U == (IData)(vlSelf->top__DOT__sum_module__DOT__count_reg))));
-    bufp->fullSData(oldp+5,(vlSelf->top__DOT__sum_module__DOT__out_wire),9);
+    bufp->fullSData(oldp+5,(vlSelf->top__DOT__sum_module__DOT__out_wire),16);
     bufp->fullBit(oldp+6,(vlSelf->clk_i));
     bufp->fullBit(oldp+7,(vlSelf->rst_ni));
     bufp->fullBit(oldp+8,(vlSelf->en_i));
     bufp->fullCData(oldp+9,(vlSelf->data_i),8);
     bufp->fullCData(oldp+10,(vlSelf->n_i),8);
     bufp->fullBit(oldp+11,(vlSelf->done_o));
-    bufp->fullSData(oldp+12,(vlSelf->sum_o),9);
+    bufp->fullSData(oldp+12,(vlSelf->sum_o),16);
     bufp->fullCData(oldp+13,(((IData)(vlSelf->en_i)
                                ? (0xffU & (IData)(vlSelf->n_i))
                                : 0U)),8);
     bufp->fullCData(oldp+14,(vlSelf->top__DOT__sum_module__DOT__data_in),8);
     bufp->fullSData(oldp+15,(((IData)(vlSelf->rst_ni)
                                ? ((0U == (IData)(vlSelf->top__DOT__sum_module__DOT__count_reg))
-                                   ? 0U : (0x1ffU & 
-                                           ((0x100U 
-                                             & ((IData)(vlSelf->top__DOT__sum_module__DOT__data_in) 
-                                                << 1U)) 
-                                            | (IData)(vlSelf->top__DOT__sum_module__DOT__data_in))))
-                               : 0U)),9);
-    bufp->fullSData(oldp+16,((0x1ffU & ((IData)(vlSelf->top__DOT__sum_module__DOT__sum_reg) 
-                                        + ((IData)(vlSelf->rst_ni)
-                                            ? ((0U 
-                                                == (IData)(vlSelf->top__DOT__sum_module__DOT__count_reg))
-                                                ? 0U
-                                                : (
-                                                   (0x100U 
-                                                    & ((IData)(vlSelf->top__DOT__sum_module__DOT__data_in) 
-                                                       << 1U)) 
-                                                   | (IData)(vlSelf->top__DOT__sum_module__DOT__data_in)))
-                                            : 0U)))),9);
+                                   ? 0U : (0xffffU 
+                                           & ((0xff00U 
+                                               & ((- (IData)(
+                                                             (1U 
+                                                              & ((IData)(vlSelf->top__DOT__sum_module__DOT__data_in) 
+                                                                 >> 7U)))) 
+                                                  << 8U)) 
+                                              | (IData)(vlSelf->top__DOT__sum_module__DOT__data_in))))
+                               : 0U)),16);
+    bufp->fullSData(oldp+16,((0xffffU & ((IData)(vlSelf->top__DOT__sum_module__DOT__sum_reg) 
+                                         + ((IData)(vlSelf->rst_ni)
+                                             ? ((0U 
+                                                 == (IData)(vlSelf->top__DOT__sum_module__DOT__count_reg))
+                                                 ? 0U
+                                                 : 
+                                                ((0xff00U 
+                                                  & ((- (IData)(
+                                                                (1U 
+                                                                 & ((IData)(vlSelf->top__DOT__sum_module__DOT__data_in) 
+                                                                    >> 7U)))) 
+                                                     << 8U)) 
+                                                 | (IData)(vlSelf->top__DOT__sum_module__DOT__data_in)))
+                                             : 0U)))),16);
 }
