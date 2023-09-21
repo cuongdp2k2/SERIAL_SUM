@@ -1,7 +1,3 @@
-// Can't compute signed numbers
-//
-//
-
 module sum_v2 (
     // input
         input logic         clk_i   ,
