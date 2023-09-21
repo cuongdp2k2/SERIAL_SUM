@@ -1,14 +1,18 @@
+// Can't compute signed numbers
+//
+//
+
 module sum_v2 (
     // input
-        input logic       clk_i   ,
-                          en_i    ,
-                          rst_ni  ,
-        input logic [7:0] n_i     ,
-        input logic [7:0] data_i  ,
+        input logic         clk_i   ,
+                            en_i    ,
+                            rst_ni  ,
+        input logic  [7:0]  n_i     ,
+        input signed [7:0]  data_i  ,
 
     // output
-        output logic       done_o ,
-        output logic [15:0] sum_o 
+        output logic         done_o ,
+        output signed [15:0] sum_o 
 
 );
     // Register 

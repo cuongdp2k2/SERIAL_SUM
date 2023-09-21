@@ -14,7 +14,7 @@ VL_INLINE_OPT void Vtop___024root___combo__TOP__0(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__sum_module__DOT__data_in = ((IData)(vlSelf->en_i)
                                                    ? 
                                                   (0xffU 
-                                                   & (IData)(vlSelf->data_i))
+                                                   & VL_EXTENDS_II(32,8, (IData)(vlSelf->data_i)))
                                                    : 0U);
 }
 

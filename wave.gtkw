@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
-[*] Wed Sep 20 07:55:11 2023
+[*] Wed Sep 20 10:58:03 2023
 [*]
 [dumpfile] "/home/FPGA/Part_1/Ex3-main/Ex3_Cuong/wave.fst"
-[dumpfile_mtime] "Wed Sep 20 07:53:56 2023"
-[dumpfile_size] 26637
+[dumpfile_mtime] "Wed Sep 20 10:56:42 2023"
+[dumpfile_size] 14625
 [savefile] "/home/FPGA/Part_1/Ex3-main/Ex3_Cuong/wave.gtkw"
 [timestart] 0
-[size] 1016 639
+[size] 1048 717
 [pos] -1 -1
-*-5.000000 17 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-5.000000 33 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [sst_width] 276
 [signals_width] 196
 [sst_expanded] 1
@@ -20,10 +20,10 @@ TOP.en_i
 TOP.rst_ni
 @24
 TOP.n_i[7:0]
-@25
+@420
 TOP.data_i[7:0]
-@24
-TOP.sum_o[8:0]
+@421
+TOP.sum_o[15:0]
 @28
 TOP.done_o
 [pattern_trace] 1

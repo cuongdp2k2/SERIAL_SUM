@@ -25,7 +25,7 @@ VL_ATTR_COLD void Vtop___024root___settle__TOP__0(Vtop___024root* vlSelf) {
     }
     if (vlSelf->en_i) {
         vlSelf->top__DOT__sum_module__DOT__data_in 
-            = (0xffU & (IData)(vlSelf->data_i));
+            = (0xffU & VL_EXTENDS_II(32,8, (IData)(vlSelf->data_i)));
         vlSelf->sum_o = (0xffffU & (IData)(vlSelf->top__DOT__sum_module__DOT__out_wire));
     } else {
         vlSelf->top__DOT__sum_module__DOT__data_in = 0U;
