@@ -1,7 +1,7 @@
 module test_LCD(
-input clk,
-output reg lcd_e, lcd_rs,
-output reg [7:0] data
+	input clk,
+	output reg lcd_e, lcd_rs,
+	output reg [7:0] data
 );
 //////////////////////////////////////////////////////
 //preset lcd write
