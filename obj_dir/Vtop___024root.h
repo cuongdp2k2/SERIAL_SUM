@@ -15,19 +15,15 @@ class Vtop___024root final : public VerilatedModule {
     // DESIGN SPECIFIC STATE
     VL_IN8(clk_i,0,0);
     VL_IN8(rst_ni,0,0);
-    VL_IN8(en_i,0,0);
     VL_IN8(data_i,7,0);
     VL_IN8(n_i,7,0);
     VL_OUT8(done_o,0,0);
     CData/*7:0*/ top__DOT__sum_module__DOT__count_reg;
     CData/*0:0*/ top__DOT__sum_module__DOT__done_wire;
-    CData/*7:0*/ top__DOT__sum_module__DOT__data_in;
     CData/*7:0*/ top__DOT__sum_module__DOT__count_wire;
     CData/*0:0*/ __Vclklast__TOP__clk_i;
     VL_OUT16(sum_o,15,0);
     SData/*15:0*/ top__DOT__sum_module__DOT__sum_reg;
-    SData/*15:0*/ top__DOT__sum_module__DOT__out_reg;
-    SData/*15:0*/ top__DOT__sum_module__DOT__out_wire;
     SData/*15:0*/ top__DOT__sum_module__DOT__add_wire;
     VlUnpacked<CData/*0:0*/, 2> __Vm_traceActivity;
 

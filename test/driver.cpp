@@ -1,7 +1,7 @@
 #define MAX_SIM 2000
 
 void set_random(Vtop *dut, vluint64_t sim_unit) {
-    dut->en_i = 1;
+    //dut->en_i = 1;
     dut->n_i = (sim_unit == 0 || dut->done_o==1 ) ? rand()%7 + 1 : dut->n_i ;
     dut->data_i = rand() % 256 ;
     dut-> rst_ni = 1;

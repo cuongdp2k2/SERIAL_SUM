@@ -26,33 +26,26 @@ void Vtop___024root__trace_chg_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buffe
     if (VL_UNLIKELY(vlSelf->__Vm_traceActivity[1U])) {
         bufp->chgCData(oldp+0,(vlSelf->top__DOT__sum_module__DOT__count_reg),8);
         bufp->chgSData(oldp+1,(vlSelf->top__DOT__sum_module__DOT__sum_reg),16);
-        bufp->chgSData(oldp+2,(vlSelf->top__DOT__sum_module__DOT__out_reg),16);
-        bufp->chgBit(oldp+3,((0U == (IData)(vlSelf->top__DOT__sum_module__DOT__count_reg))));
-        bufp->chgSData(oldp+4,(vlSelf->top__DOT__sum_module__DOT__out_wire),16);
+        bufp->chgBit(oldp+2,((0U == (IData)(vlSelf->top__DOT__sum_module__DOT__count_reg))));
     }
-    bufp->chgBit(oldp+5,(vlSelf->clk_i));
-    bufp->chgBit(oldp+6,(vlSelf->rst_ni));
-    bufp->chgBit(oldp+7,(vlSelf->en_i));
-    bufp->chgCData(oldp+8,(vlSelf->data_i),8);
-    bufp->chgCData(oldp+9,(vlSelf->n_i),8);
-    bufp->chgBit(oldp+10,(vlSelf->done_o));
-    bufp->chgSData(oldp+11,(vlSelf->sum_o),16);
-    bufp->chgCData(oldp+12,(((IData)(vlSelf->en_i) ? 
-                             (0xffU & (IData)(vlSelf->n_i))
-                              : 0U)),8);
-    bufp->chgCData(oldp+13,(vlSelf->top__DOT__sum_module__DOT__data_in),8);
-    bufp->chgSData(oldp+14,(((IData)(vlSelf->rst_ni)
-                              ? ((0U == (IData)(vlSelf->top__DOT__sum_module__DOT__count_reg))
-                                  ? 0U : (0xffffU & 
-                                          ((0xff00U 
-                                            & ((- (IData)(
-                                                          (1U 
-                                                           & ((IData)(vlSelf->top__DOT__sum_module__DOT__data_in) 
-                                                              >> 7U)))) 
-                                               << 8U)) 
-                                           | (IData)(vlSelf->top__DOT__sum_module__DOT__data_in))))
-                              : 0U)),16);
-    bufp->chgSData(oldp+15,((0xffffU & ((IData)(vlSelf->top__DOT__sum_module__DOT__sum_reg) 
+    bufp->chgBit(oldp+3,(vlSelf->clk_i));
+    bufp->chgBit(oldp+4,(vlSelf->rst_ni));
+    bufp->chgCData(oldp+5,(vlSelf->data_i),8);
+    bufp->chgCData(oldp+6,(vlSelf->n_i),8);
+    bufp->chgBit(oldp+7,(vlSelf->done_o));
+    bufp->chgSData(oldp+8,(vlSelf->sum_o),16);
+    bufp->chgSData(oldp+9,(((IData)(vlSelf->rst_ni)
+                             ? ((0U == (IData)(vlSelf->top__DOT__sum_module__DOT__count_reg))
+                                 ? 0U : (0xffffU & 
+                                         ((0xff00U 
+                                           & ((- (IData)(
+                                                         (1U 
+                                                          & ((IData)(vlSelf->data_i) 
+                                                             >> 7U)))) 
+                                              << 8U)) 
+                                          | (IData)(vlSelf->data_i))))
+                             : 0U)),16);
+    bufp->chgSData(oldp+10,((0xffffU & ((IData)(vlSelf->top__DOT__sum_module__DOT__sum_reg) 
                                         + ((IData)(vlSelf->rst_ni)
                                             ? ((0U 
                                                 == (IData)(vlSelf->top__DOT__sum_module__DOT__count_reg))
@@ -61,10 +54,10 @@ void Vtop___024root__trace_chg_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buffe
                                                    (0xff00U 
                                                     & ((- (IData)(
                                                                   (1U 
-                                                                   & ((IData)(vlSelf->top__DOT__sum_module__DOT__data_in) 
+                                                                   & ((IData)(vlSelf->data_i) 
                                                                       >> 7U)))) 
                                                        << 8U)) 
-                                                   | (IData)(vlSelf->top__DOT__sum_module__DOT__data_in)))
+                                                   | (IData)(vlSelf->data_i)))
                                             : 0U)))),16);
 }
 
